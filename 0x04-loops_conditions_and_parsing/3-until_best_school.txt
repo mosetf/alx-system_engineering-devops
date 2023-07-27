@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#use until loop
+#use until loop to print
 
 COUNTER=0
 until [ $COUNTER -eq 10 ]
