@@ -1,26 +1,10 @@
-#!/usr/bin/env bash
-if ! [ -x "$(command -v nginx)" ]; then
-    sudo apt update
-    sudo apt install nginx -y
-fi
-
-if sudo netstat -tuln | grep -q ':80'; then
-    echo "Nginx is already listening on port 80."
-else
-    sudo bash -c 'echo "server {
-        listen 80;
-        location / {
-            root/usr/share/nginx/html;
-            index index.html
-        }
-    }" > /etc/nginx/sites-available/default'
-
-    sudo ln -s /etc/nginx/sites-available/default etc/nginx/sites-enabled/
-
-    if sudo nginx -t; then
-        sudo systemctl restart nginx
-        echo "Nginx has been configured to listen on port 80."
-    else
-    echo "Nginx configuration test failed. Check your configuration."
-    fi
-fi
+#!/usr/bin/env bash                                                                                                                                       
+# fix nginx listening on port 80                                                                                                                          
+# Go to sites-enabled folder for Nginx                                                                                                                    
+cd /etc/nginx/sites-enabled/ || exit;                                                                                                                             
+# Delete the default file                                                                                                                               
+rm default;                                                                                                                                               
+# Create symbolic link to the deafult file in sites-available                                                                                             
+ln -s /etc/nginx/sites-available/default default;                                                                                                         
+# Restart Nginx                                                                                                                                           
+service nginx restart 
