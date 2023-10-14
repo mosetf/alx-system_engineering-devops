@@ -1,0 +1,21 @@
+The Journey of a URL: Exploring the Inner Workings of Typing https://www.google.com
+Have you ever wondered what happens behind the scenes when you type a URL like https://www.google.com into your browser and hit Enter? In this blog post, we will take a closer look at the intricate process that occurs involving various components like DNS request, TCP/IP, firewall, HTTPS/SSL, load-balancer, web server, application server, and database. Let's dive in!
+
+1. DNS Request.
+As soon as you hit Enter, your browser initiates a Domain Name System (DNS) request. The DNS server is responsible for translating the URL into the corresponding IP address. It queries the DNS servers to find the IP address associated with the domain name.
+2. TCP/IP.
+Once the browser receives the IP address, it establishes a TCP connection with the server. TCP breaks the data into packets and ensures reliable communication between your browser and the server. To initiate this connection, a three-way handshake takes place between your browser and the web server. It ensures that both sides are ready to send and receive data.
+3. Firewall.
+Before the connection is established, the request may pass through a firewall. A firewall acts as a security barrier, examining incoming and outgoing traffic and allowing or blocking it based on predefined rules. It is a critical component for protecting the server from unauthorized access and potential threats.
+4. HTTPS/SSL.
+If the website supports secure communication, the browser and server negotiate a secure connection using the HTTPS protocol. This involves an SSL/TLS handshake, where the server presents a digital certificate to verify its authenticity. The SSL certificate encrypts the data exchanged between the browser and the server ensuring confidentiality and integrity.
+5. Load-Balancer.
+In the case of popular websites like Google, multiple servers are often used to handle the incoming requests efficiently. A load-balancer distributes the incoming traffic evenly across these server`s optimizing performance and preventing overload on any single server ensuring smooth user experience even while there is high traffic.
+6. Web Server.
+Once the connection is established and the HTTPS handshake is complete, the web server receives the request. The web server, such as Apache or Nginx processes the request and retrieves the requested web page or resource. It generates the appropriate response typically in HTML format and sends it back to the browser.
+7. Application Server.
+In some cases, the web server may need to interact with an application server. The application server hosts the business logic and processes dynamic content. It communicates with databases, performs calculations, and generates personalized responses based on user input or specific requirements.
+8. Database.
+If the requested web page or resource requires data from a database, the application server queries the database server which retrieves the relevant information and sends it back to the application server, which then incorporates it into the response sent to the browser. This allows for dynamic content generation and personalized experiences.
+The process of typing a URL like https://www.google.com and pressing Enter involves a complex series of steps that seamlessly work together to deliver the requested web page. From DNS requests to TCP/IP connections, firewalls to load-balancers, web servers to application servers, and databases, each component plays a crucial role in ensuring a smooth browsing experience. Understanding these underlying mechanisms can help us appreciate the intricate infrastructure that powers the websites we visit daily.
+
